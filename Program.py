@@ -3,5 +3,6 @@ import Task2
 import Task3
 import Task4
 import Task5
+import Task6
 
-Task5.Run()
+Task6.Run()
