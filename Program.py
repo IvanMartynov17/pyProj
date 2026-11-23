@@ -1,5 +1,6 @@
 ﻿import Task1
 import Task2
+import Task3
 
 
-Task2.Run()
+Task3.Run()
