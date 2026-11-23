@@ -4,4 +4,4 @@
     discount = int(input("Enter the discount: "))
 
     sum = price * count * (1 - discount / 100)
-    print(f"The sum is {sum:.2f}")
+    print(f"The sum is = {sum:.2f}")
