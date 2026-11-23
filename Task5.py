@@ -1,0 +1,19 @@
+﻿def Run():
+    day = int(input("Enter the day of the week (1-7): "))
+    match day:
+        case 1:
+            print("Monday 08:00–18:00")
+        case 2:
+            print("Tuesday 08:00–18:00")
+        case 3:
+            print("Wednesday 09:00–17:00")
+        case 4:
+            print("Thursday 08:00–18:00")
+        case 5:
+            print("Friday 08:00–16:00")
+        case 6:
+            print("Saturday 09:00–14:00")
+        case 7:
+            print("Sunday Closed")
+        case _:
+            print("Invalid day")
