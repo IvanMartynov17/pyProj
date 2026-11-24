@@ -28,6 +28,8 @@ def Run():
     for i in range(count):
         if (numbers[i] > 1000):
             number_more_than_thousand += 1
+        else:
+            print("Number is less than 1000")
             
     print(f"List of numbers: {numbers}")
     print("==Звіт по прийомам==")
