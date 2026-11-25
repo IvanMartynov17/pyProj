@@ -25,23 +25,16 @@ class Patient:
         self.Email = email
         self.Age = age
 
+
     def GetAgeCategory(self):
+        self.FullName = f"{self.FirstName} {self.LastName}"
         if self.Age < 18:
-            print (f"[{self.Id}] Child")
+            print (f"{self.FullName} Child")
         elif self.Age > 18 and self.Age < 60:
-            print (f"[{self.Id}] Adult")
+            print (f"{self.FullName} Adult")
         else:
-            print (f"[{self.Id}] Pensioner")
+            print (f"{self.FullName} Pensioner")
 
     def show(self):
-        print(f"ID: [{self.Id}]")
-        print(f"First Name: {self.FirstName}")
-        print(f"Last Name: {self.LastName}")
-        print(f"Date of Birth: {self.DateOfBirth}")
-        print(f"Blood Type: {self.BloodType}")
-        print(f"Phone: {self.Phone}")
-        print(f"Email: {self.Email}")
-        print(f"Full Name: {self.FullName}")
-        print(f"Age: {self.Age}")
-        print(f"Is Adult: {self.IsAdult}")
-
+        print(f"ID: [{self.Id}] | {self.FirstName} | {self.LastName} | {self.DateOfBirth} "
+              f"| {self.BloodType} | {self.Phone} | {self.Email} | {self.Age} | {self.IsAdult}")
