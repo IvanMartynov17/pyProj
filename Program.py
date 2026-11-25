@@ -1,5 +1,7 @@
-﻿from lab3.patient import Patient
+﻿from lab3 import patientmanager
+from lab3.patient import Patient
 from lab3.doctor import Doctor
+from lab3.patientmanager import PatientManager
 
 p1 = Patient("Martynov", "Ivan", "02.12.2008", "A+", "+380999999999",
              "ivan.martynov@gmail.com", 17)
@@ -34,3 +36,21 @@ d1.show()
 d2.show()
 
 d3.show()
+
+patient_manager = PatientManager()
+
+print ("=== Patient Manager ===")
+patient_manager.Add(p1)
+patient_manager.Add(p2)
+patient_manager.Add(p3)
+
+target = int(input("Enter a target for search:"))
+patient_manager.FindById(target).show()
+
+name_for_search = str(input("Enter a name for search:"))
+patient_manager.FindByName(name_for_search).show()
+
+id_for_remove = int(input("Enter an ID for removal:"))
+patient_manager.Remove(id_for_remove)
+
+patient_manager.Display()
