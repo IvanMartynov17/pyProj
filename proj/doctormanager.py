@@ -1,12 +1,15 @@
-﻿class DoctorManager:
+﻿from proj import doctor
+from proj.doctor import Doctor
+
+class DoctorManager:
     max_doctors = 50
     _doctor = [max_doctors]
     _count = 0
     count = _count
 
     def __init__(self):
-        _doctor = self._doctor
-        count = self._count
+        self._doctor = []
+        self._count = 0
 
     def Add(self, doctor):
         if self.count < self.max_doctors:
@@ -23,9 +26,10 @@
                 return doctor
         return None
 
+
     def FindBySpeciality(self, speciality):
         for doctor in self._doctor:
-            if doctor.Speciality == speciality:
+            if doctor.speciality == speciality:
                 return doctor
         return None
 

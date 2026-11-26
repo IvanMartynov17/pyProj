@@ -3,12 +3,13 @@ from proj.patient import Patient
 from proj.doctor import Doctor
 from proj.patientmanager import PatientManager
 from proj.doctormanager import DoctorManager
+import inspect
 
-p1 = Patient("Martynov", "Ivan", "02.12.2008", "A+", "+380999999999",
+p1 = Patient("Ivan", "Martynov", "02.12.2008", "A+", "+380999999999",
              "ivan.martynov@gmail.com", 17)
-p2 = Patient("Smith", "John", "01.01.1990", "O-", "+1234567890",
+p2 = Patient("John", "Smith", "01.01.1990", "O-", "+1234567890",
              "john.smith@example.com", 31)
-p3 = Patient("Doe", "Jane", "15.05.1985", "B+", "+9876543210",
+p3 = Patient("Jane", "Doe", "15.05.1985", "B+", "+9876543210",
              "jane.doe@example.com", 36)
 
 print("\t===Patient===\t")
@@ -30,6 +31,7 @@ d2 = Doctor("John", "Doe", "Pediatrician",
 
 d3 = Doctor("Jane", "Doe", "Dermatologist",
             "LIC-003", "+9876543210", 10, 19)
+
 
 print("\t===Doctors===\t")
 d1.show()
@@ -63,8 +65,13 @@ doctor_manager.Add(d1)
 doctor_manager.Add(d2)
 doctor_manager.Add(d3)
 
-id_for_search_doctor = str(input("Enter a name for search:"))
-doctor_manager.FindByName(id_for_search_doctor).show()
+doctor_manager.DisplayAll()
+
+speciality_for_search_doctor = str(input("Enter a speciality for search:"))
+doctor_manager.FindBySpeciality(speciality_for_search_doctor).show()
+
+id_for_search_doctor = int(input("Enter a id for search:"))
+doctor_manager.FindById(id_for_search_doctor).show()
 
 id_for_remove_doctor = int(input("Enter id to delete a doctor: "))
 doctor_manager.Remove(id_for_remove_doctor)
