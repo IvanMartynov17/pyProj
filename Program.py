@@ -3,7 +3,9 @@ from proj.patient import Patient
 from proj.doctor import Doctor
 from proj.patientmanager import PatientManager
 from proj.doctormanager import DoctorManager
+from proj.appointment import Appointment
 import inspect
+
 
 p1 = Patient("Ivan", "Martynov", "02.12.2008", "A+", "+380999999999",
              "ivan.martynov@gmail.com", 17)
@@ -77,3 +79,20 @@ id_for_remove_doctor = int(input("Enter id to delete a doctor: "))
 doctor_manager.Remove(id_for_remove_doctor)
 
 doctor_manager.DisplayAll()
+
+appoinment1 = Appointment(p1, d1, "2023-10-01", "10:00")
+appoinment2 = Appointment(p2, d2, "2023-10-02", "11:00")
+appoinment3 = Appointment(p3, d3, "2023-10-03", "12:00")
+
+print("\t===Appointments===\t")
+appoinment1.appointment_show()
+appoinment2.appointment_show()
+appoinment3.appointment_show()
+
+appoinment1.Cancel("Patient requested cancellation")
+appoinment2.Complete()
+appoinment3.Cancel("Doctor unavailable")
+
+appoinment1.appointment_show()
+appoinment2.appointment_show()
+appoinment3.appointment_show()
