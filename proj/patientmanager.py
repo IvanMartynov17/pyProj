@@ -1,4 +1,4 @@
-﻿from lab3.patient import Patient
+﻿from proj.patient import Patient
 
 class PatientManager:
     max_patients = 100

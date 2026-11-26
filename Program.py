@@ -1,7 +1,8 @@
-﻿from lab3 import patientmanager
-from lab3.patient import Patient
-from lab3.doctor import Doctor
-from lab3.patientmanager import PatientManager
+﻿from proj import patientmanager
+from proj.patient import Patient
+from proj.doctor import Doctor
+from proj.patientmanager import PatientManager
+from proj.doctormanager import DoctorManager
 
 p1 = Patient("Martynov", "Ivan", "02.12.2008", "A+", "+380999999999",
              "ivan.martynov@gmail.com", 17)
@@ -54,3 +55,18 @@ id_for_remove = int(input("Enter an ID for removal:"))
 patient_manager.Remove(id_for_remove)
 
 patient_manager.Display()
+
+#doctorManager
+print("===Doctor Manager===")
+doctor_manager = DoctorManager()
+doctor_manager.Add(d1)
+doctor_manager.Add(d2)
+doctor_manager.Add(d3)
+
+id_for_search_doctor = str(input("Enter a name for search:"))
+doctor_manager.FindByName(id_for_search_doctor).show()
+
+id_for_remove_doctor = int(input("Enter id to delete a doctor: "))
+doctor_manager.Remove(id_for_remove_doctor)
+
+doctor_manager.DisplayAll()
